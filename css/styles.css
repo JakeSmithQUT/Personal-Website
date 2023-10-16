@@ -182,3 +182,13 @@ a::before {
 .collapsible-container ul {
     display: block;
 }
+
+/* Media query for aspect ratio */
+@media (max-aspect-ratio: 4/3) {
+    .resume-content {
+        padding: 40px 5%;  /* Adjusted horizontal padding */
+    }
+    .contact-info {
+        padding: 20px 5%;  /* Adjusted horizontal padding */
+    }
+}
