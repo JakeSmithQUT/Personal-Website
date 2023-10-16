@@ -1,0 +1,184 @@
+
+@font-face {
+    font-family: 'Bierstadt';
+    src: url('../fonts/Bierstadt-Regular.ttf') format('truetype');
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+a {
+    text-decoration: none; 
+    color: inherit;  /* this makes the link adopt the color of its parent or surrounding text */
+}
+
+a::after {
+    content: "»";  /* using a right arrow symbol as an example */
+    padding-left: 5px;  /* space between the link text and the symbol */
+}
+
+a::before {
+    content: "»";  /* using a right arrow symbol as an example */
+    padding-right: 5px;  /* space between the link text and the symbol */
+}
+
+
+
+.header {
+    padding: 20px;
+    text-align: center;
+    background: #ffffff;
+    border-bottom: 1px solid #e7e7e7;
+}
+
+.header h2 {
+    font-size: 24px;
+}
+
+.header p {
+    margin-top: 5px;
+}
+
+.navbar {
+    display: flex;
+    justify-content: center;
+    background-color: #f1f1f1;
+    padding: 10px 0;
+    border-bottom: 1px solid #e7e7e7;
+}
+
+/* Existing navbar link styles */
+.navbar a {
+    padding: 10px 20px;
+    display: block;
+    color: #666;
+    text-align: center;
+    text-decoration: none;
+}
+
+.navbar a:hover {
+    color: #333;
+    background-color: #e7e7e7;
+}
+
+/* New styles for the active link */
+.navbar a.active {
+    color: #000000;;  /* You can adjust this color as needed */
+    background-color: #b0b0b0;  /* You can adjust this background color as needed */
+}
+
+
+.resume-content {
+    padding: 40px 15%;
+    background-color: #ffffff;
+}
+
+.contact-info h1 {
+    text-align: center;
+    font-size: 28px;
+}
+
+.contact-info p {
+    text-align: center;
+    margin: 10px 0;
+}
+
+.summary {
+    font-style: italic;
+    margin-top: 15px;
+}
+
+.section h2 {
+    font-size: 20px;
+    border-bottom: 1px solid #e7e7e7;
+    padding-bottom: 5px;
+    margin-top: 20px;
+}
+
+.section h3 {
+    font-size: 18px;
+    margin: 15px 0 5px 0;
+}
+
+.date {
+    font-size: 12px;
+    font-style: italic;
+    color: #777;
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
+
+.contact-info {
+    padding: 20px 0;
+    text-align: center;
+    background-color: #ffffff;
+    border-bottom: 1px solid #e7e7e7;
+}
+
+.contact-info h1 {
+    margin: 10px 0;
+    font-size: 28px;
+}
+
+.contact-info p {
+    margin: 5px 0;
+}
+
+.summary {
+    margin-top: 15px;
+    font-style: italic;
+}
+
+.resume-content {
+    padding: 20px 20%;
+    background-color: #ffffff;
+}
+
+.contact-info {
+    padding: 20px 20%;
+    text-align: center;
+    background-color: #ffffff;
+    border-bottom: 1px solid #e7e7e7;
+}
+
+/* Hide the content by default */
+.content {
+    display: none;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+}
+
+/* Add a style to make the header look clickable, e.g., cursor as pointer */
+.collapsible {
+    cursor: pointer;
+}
+
+.collapsible::before {
+    content: "-"; /* Unicode plus sign */
+    /* margin-right: 3px; /* Space between the symbol and the text */
+    font-size: 14px; /* Adjust the size as needed */
+    /*color: #888;  A subtle gray color */
+    vertical-align: middle; /* Align the symbol vertically with the text */
+}
+
+.collapsible.active::before {
+    content: "+"; /* Unicode minus sign */
+    font-size: 14px; /* Adjust the size as needed */
+    /*color: #888; /* A subtle gray color */
+    vertical-align: middle; /* Align the symbol vertically with the text */
+}
+
+
+.collapsible-container .date,
+.collapsible-container ul {
+    display: block;
+}
