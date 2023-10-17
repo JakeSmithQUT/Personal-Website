@@ -2,6 +2,7 @@
 @font-face {
     font-family: 'Bierstadt';
     src: url('../fonts/Bierstadt-Regular.ttf') format('truetype');
+    font-display: swap;
 }
 
 body {
