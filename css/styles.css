@@ -5,7 +5,7 @@
 }
 
 body {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Bierstadt', sans-serif;
     margin: 0;
     padding: 0;
     background-color: #f9f9f9;
@@ -17,16 +17,17 @@ a {
     color: inherit;  /* this makes the link adopt the color of its parent or surrounding text */
 }
 
+/*
 a::after {
-    content: "»";  /* using a right arrow symbol as an example */
-    padding-left: 5px;  /* space between the link text and the symbol */
+    content: "";  /* using a right arrow symbol as an example 
+    padding-left: 5px;  /* space between the link text and the symbol 
 }
 
 a::before {
-    content: "»";  /* using a right arrow symbol as an example */
-    padding-right: 5px;  /* space between the link text and the symbol */
+    content: "»";  /* using a right arrow symbol as an example 
+    padding-right: 5px;  /* space between the link text and the symbol 
 }
-
+*/
 
 
 .header {
