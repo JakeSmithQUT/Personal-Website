@@ -17,23 +17,19 @@ a {
     color: inherit;  /* this makes the link adopt the color of its parent or surrounding text */
 }
 
-a::after {
-    content: "»";  /* using a right arrow symbol as an example */
-    padding-left: 5px;  /* space between the link text and the symbol */
+p{
+    font-size: 19px;
 }
 
-a::before {
-    content: "»";  /* using a right arrow symbol as an example */
-    padding-right: 5px;  /* space between the link text and the symbol */
+li{
+    font-size: 19px;
 }
-
-
 
 .header {
     padding: 20px;
     text-align: center;
     background: #ffffff;
-    border-bottom: 1px solid #e7e7e7;
+    /* border-bottom: 1px solid #e7e7e7; */
 }
 
 .header h2 {
@@ -44,11 +40,16 @@ a::before {
     margin-top: 5px;
 }
 
+.navbar-wrapper {
+    background-color: #ffffff;
+    padding: 10px 20%; /* Adjust the horizontal padding to match other sections */
+}
+
 .navbar {
+    background-color: #f1f1f1;
+    border-radius: 5px;
     display: flex;
     justify-content: center;
-    background-color: #f1f1f1;
-    padding: 10px 0;
     border-bottom: 1px solid #e7e7e7;
 }
 
@@ -56,7 +57,7 @@ a::before {
 .navbar a {
     padding: 10px 20px;
     display: block;
-    color: #666;
+    color: #000000;
     text-align: center;
     text-decoration: none;
 }
@@ -72,6 +73,19 @@ a::before {
     background-color: #b0b0b0;  /* You can adjust this background color as needed */
 }
 
+.border-break {
+    background-color: #ffffff;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    padding-top: 10px;
+    border-bottom: 2px solid #e7e7e7;
+}
+
+/* Add a style to make the header look clickable, e.g., cursor as pointer */
+.restricted {
+    cursor: no-drop;
+}
 
 .resume-content {
     padding: 40px 15%;
@@ -94,34 +108,28 @@ a::before {
 }
 
 .section h2 {
-    font-size: 20px;
-    border-bottom: 1px solid #e7e7e7;
+    font-size: 24px;
+    border-bottom: 1px solid #e7e7e7; 
     padding-bottom: 5px;
     margin-top: 20px;
 }
 
 .section h3 {
-    font-size: 18px;
+    font-size: 22px;
     margin: 15px 0 5px 0;
 }
 
 .date {
-    font-size: 12px;
+    font-size: 16px;
     font-style: italic;
-    color: #777;
-}
-
-.skills-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 10px;
+    color: #3c3c3c;
 }
 
 .contact-info {
     padding: 20px 0;
     text-align: center;
     background-color: #ffffff;
-    border-bottom: 1px solid #e7e7e7;
+    /* border-bottom: 1px solid #e7e7e7; */
 }
 
 .contact-info h1 {
@@ -147,7 +155,7 @@ a::before {
     padding: 20px 20%;
     text-align: center;
     background-color: #ffffff;
-    border-bottom: 1px solid #e7e7e7;
+    /*  border-bottom: 1px solid #e7e7e7; */
 }
 
 /* Hide the content by default */
@@ -190,5 +198,9 @@ a::before {
     }
     .contact-info {
         padding: 20px 5%;  /* Adjusted horizontal padding */
+    }
+
+    .navbar {
+        padding: 0 5%;  /* Adjusted horizontal padding */
     }
 }
