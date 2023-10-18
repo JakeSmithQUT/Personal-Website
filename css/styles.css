@@ -1,4 +1,3 @@
-
 @font-face {
     font-family: 'Bierstadt';
     src: url('../fonts/Bierstadt-Regular.ttf') format('truetype');
@@ -61,6 +60,7 @@ li{
     color: #000000;
     text-align: center;
     text-decoration: none;
+    max-width: 82.25px;
 }
 
 .navbar a:hover {
@@ -90,6 +90,7 @@ li{
 
 .resume-content {
     padding: 40px 15%;
+    min-height: 100%;
     background-color: #ffffff;
 }
 
