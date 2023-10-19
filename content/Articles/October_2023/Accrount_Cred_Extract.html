@@ -24,11 +24,11 @@
 
     <div class="navbar-wrapper">
         <div class="navbar">
-			<a href="..\..\index.html">Home</a>
-			<a href="..\Projects\overview.html">Projects</a>
-			<a href="..\Articles\overview.html" class="active">Articles</a>
-			<a href="..\Books\overview.html">Books</a>
-			<a href="..\About\overview.html">About</a>
+			<a href="..\..\..\index.html">Home</a>
+			<a href="..\..\Projects\overview.html">Projects</a>
+			<a href="..\..\Articles\overview.html" class="active">Articles</a>
+			<a href="..\..\Books\overview.html">Books</a>
+			<a href="..\..\About\overview.html">About</a>
             <!-- <a href="#">Contact</a> -->
         </div>
         <div class="border-break"></div>
@@ -40,10 +40,10 @@
             <!-- Project 1 -->
             <div class="project-item">
                 <div class="collapsible-container">
-                    <h2> Extracting CitectSCADA account credentials from ICS client machines</h2>
+                    <h2> Extracting CitectSCADA Account Credentials from Client Terminals</h2>
                     <table class="article-table" >
                         <tr>
-                            <td><p class="date">read time: 7 minutes</p></td>
+                            <td><p class="date">Read time: 7 minutes</p></td>
                             <td><p class="article-date">19 October 2023</p></td>
                         </tr>
                     </table>
@@ -56,19 +56,19 @@
                     </p>
                     <h3>Aveva's Citect SCADA Vulnerabilities</h3>
                     <p>
-                        I want to draw your attention to a "convenience feature" in the Aveva Citect SCADA (commonly known as Plant SCADA) environment. I won’t delve deep into SCADA; <u><a href="https://johnwiltshire.com/citect-help/Subsystems/CicodeReferenceCitectHTML/Content/Login.html" target="_blank">there are experts who've covered it more comprehensively than I could.</a></u> However, I will mention that Citect SCADA is especially popular in Australia's mining and energy sectors. Some PCS engineers even spend their entire careers specializing solely in it.
+                        I want to draw your attention to a "convenience feature" in the Aveva Citect SCADA (commonly known as Plant SCADA) environment. I won’t delve deep into SCADA; <u><a href="https://johnwiltshire.com/citect-help/Subsystems/CicodeReferenceCitectHTML/Content/Login.html" target="_blank">there are experts who've covered it more comprehensively than I could.</a></u> However, I will mention that Citect SCADA is especially popular in Australia's mining and energy sectors. Some PCS engineers even spend their entire careers specialising solely in it.
                     </p>
                     <p>
-                        Like many advanced SCADA systems, Citect offers the flexibility of customizing user accounts with distinct access levels. Aveva, the company who actively develop Citect, stores these credentials in a users.dbf file, using the SHA-1 hashing technique for password security. The purpose of these accounts is to ensure that only authorised personnel can access and manipulate certain control systems. To illustrate, this could prevent an operator from arbitrarily adjusting a methane gas setpoint in response to frequent equipment trips due to excessive methane levels. Instead, a gas monitoring engineer's account would have the privilege level required to make the change.
+                        Like many advanced SCADA systems, Citect offers the flexibility of customising user accounts with distinct access levels. Aveva, the company who actively develop Citect, stores these credentials in a users.dbf file, using the SHA-1 hashing technique for password security. The purpose of these accounts is to ensure that only authorised personnel can access and manipulate certain control systems. To illustrate, this could prevent an operator from arbitrarily adjusting a methane gas setpoint in response to frequent equipment trips due to excessive methane levels. Instead, a gas monitoring engineer's account would have the privilege level required to make the change.
                     </p>
                     <p>
                         Citect SCADA has its own scripting language called Cicode, it is used exclusively with the Citect suite and clearly has had heavy influence from other scripting languages like Visual Basic. A particular function within Cicode that I want to bring attention to is the <u><a href="https://johnwiltshire.com/citect-help/Subsystems/CicodeReferenceCitectHTML/Content/Login.html" target="_blank">Login</a></u> function. Designed to log in a user account on a Citect terminal, it’s frequently used to automate user login upon system startup. This is advantageous in places like underground mines where power outages, resulting from safety trips or scheduled maintenance, are common. With this function, the underground Citect terminal can auto-reboot, initiate Citect, and log into the necessary account, ensuring swift control system restoration.
                     </p>
                     <p>
-                        However, the major flaw of this function is not just that in order to use it the username and password for that Citect terminal are hardcoded in plaintext in a Cicode file (.ci) but that ALL usernames and passwords are hardcoded in Cicode for all terminals that have the auto-login functionality implemented. This function only takes the credentials as a plaintext input, thwarting the password hashing done in the users.dbf file and could allow an attacker to log in as any user that utilizes this login Cicode function, potentially enabling them to control equipment from any terminal on site running Citect.
+                        However, the major flaw of this function is not just that in order to use it, the username and password for that Citect terminal are hardcoded in plaintext in a Cicode file (.ci) but that ALL usernames and passwords are hardcoded in Cicode for all terminals that have the auto-login functionality implemented. This function only takes the credentials as a plaintext input, thwarting the password hashing done in the users.dbf file and could allow an attacker to log in as any user that utilizes this login Cicode function, potentially enabling them to control equipment from any terminal on site running Citect.
                     </p>
                     <p>
-                        To demonstrate this, I've put together a basic script that extracts usernames and passwords from all accounts using the Login function in Cicode files. Executed without elevated powershell privileges, this script requires only the Citect project directory as input.
+                        To demonstrate this, I've put together a basic script that extracts usernames and passwords from all accounts using the Login function in Cicode files. Executed without elevated privileges, this script requires only the Citect project directory as input.
                     </p>
                     
                     <div class="tab-container">
@@ -87,7 +87,7 @@ function Get-Credentials {
         [Parameter(Mandatory = $true)]
         [string]$ciFilePath
     )
-    # Initialize an empty array to store the result
+    # Initialise an empty array to store the result
     $result = @()
     # Use Select-String to find matches for the login pattern in the specified .ci file
     $matches = Select-String -Path $ciFilePath -Pattern 'Login\s*\(\s*"([^"]+)"\s*,\s*"([^"]+)"\s*\)'
@@ -116,7 +116,7 @@ function Get-Credentials {
 $directoryPath = "Citect_User_Folder_Path_Here"
 # Get all .ci files recursively from the specified directory
 $ciFiles = Get-ChildItem -Path $directoryPath -Recurse -Filter *.ci
-# Initialize an array to hold all credentials
+# Initialise an array to hold all credentials
 $allCredentials = @()
 # Process each .ci file
 foreach ($ciFile in $ciFiles) {
@@ -221,14 +221,14 @@ END
                     </p>
                     <h4>ICS/OT infrastructure account management</h4>
                     <p>
-                        I touched on this earlier but password and account management is often terrible in ICS environments. I'm not talking exclusively about Windows accounts here, this also includes passwords for network switches, field devices, radios, etc... It is common (bad) practice to have this all saved in an excel spreadsheet for convenience. Often this spreadsheet is just places in a network drive unprotected, accessible not only by attackers but also bored personnel perusing the network drive. Something like a password manager could be used instead, most modern password managers are able to be shared and synced between authorized users and could even be more convenient than a dedicated spreadsheet. At the very least PCS engineers should be password protecting all spreadsheets with sensitive information on them, this includes network architecture maps and IP address lists. Excel has this functionality built-in, simply go <i>file &#8594 Info &#8594 Protect Workbook &#8594 Encrypt with Password</i>.
+                        I touched on this earlier but password and account management is often terrible in ICS environments. I'm not talking exclusively about Windows accounts here, this also includes passwords for network switches, field devices, radios, etc... It is common (bad) practice to have this all saved in an excel spreadsheet for convenience. Often this spreadsheet is just places in a network drive unprotected, accessible not only by attackers but also bored personnel perusing the network drive. Something like a password manager could be used instead, most modern password managers are able to be shared and synced between authorised users and could even be more convenient than a dedicated spreadsheet. At the very least PCS engineers should be password protecting all spreadsheets with sensitive information on them, this includes network architecture maps and IP address lists. Excel has this functionality built-in, simply go <i>file &#8594 Info &#8594 Protect Workbook &#8594 Encrypt with Password</i>.
                     </p>
                     <h4>Managing Backups</h4>
                     <p>
                         I have seen a lot of sites use a script that runs once a week to backup their DEV server Citect files. Or maybe they periodically use the backup .ctz creator built-in to Citect Studio. These backups can be used by an attacker to gain insight into the ICS environment on a site. Protecting these backups with encryption is extremely easy and accessible simply by zipping them up with something like 7Zip and putting a strong password on the zip file. This will prevent the attacker from getting a map to the entire site control system and will probably even save storage space with the file compression.
                     </p>
                     <p>
-                        In the fast-paced world of industrial control systems, the push for continuous uptime is understandable, but it does not need to come at the peril of cybersecurity. As I've detailed, vulnerabilities, no matter how innocuous they may seem, can provide attackers with substantial footholds, jeopardizing not only digital infrastructure but potentially causing tangible harm. While the allure of convenience is tempting, we must champion best practices, regular audits, and ongoing education in our ICS environments. By marrying both uptime and security, we can pave the way for safer, more efficient, and resilient operations.
+                        In the fast-paced world of industrial control systems, the push for continuous uptime is understandable, but it does not need to come at the peril of cybersecurity. As I've detailed, vulnerabilities, no matter how innocuous they may seem, can provide attackers with substantial footholds, jeopardising not only digital infrastructure but potentially causing tangible harm. While the allure of convenience is tempting, we must champion best practices, regular audits, and ongoing education in our ICS environments. By marrying both uptime and security, we can pave the way for safer, more efficient, and resilient operations.
                     </p>
                 </div>
             </div>
