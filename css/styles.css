@@ -236,13 +236,13 @@ li{
     align-items: center;
 }
 
-.article-table{
-    width: 100%;
-}
-
 .article-image {
     width: 50%;
     border-collapse: collapse; /* Ensures borders don't double up */
+}
+
+.article-table{
+    width: 100%;
 }
 
 .article-table td {
@@ -264,4 +264,15 @@ li{
     .navbar {
         padding: 0 5%;  /* Adjusted horizontal padding */
     }
+
+    .article-image {
+        width: 95%;
+        border-collapse: collapse; /* Ensures borders don't double up */
+    }
+    
+    .navbar-wrapper {
+        background-color: #ffffff;
+        padding: 10px 5%; /* Adjust the horizontal padding to match other sections */
+}
+
 }
