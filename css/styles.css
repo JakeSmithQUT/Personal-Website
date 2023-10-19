@@ -1,11 +1,12 @@
-
 @font-face {
     font-family: 'Bierstadt';
     src: url('../fonts/Bierstadt-Regular.ttf') format('truetype');
+    font-display: swap;
 }
 
 body {
     font-family: 'Bierstadt', sans-serif;
+    height: 100vh;
     margin: 0;
     padding: 0;
     background-color: #f9f9f9;
@@ -60,6 +61,7 @@ li{
     color: #000000;
     text-align: center;
     text-decoration: none;
+    max-width: 82.25px;
 }
 
 .navbar a:hover {
@@ -85,10 +87,12 @@ li{
 /* Add a style to make the header look clickable, e.g., cursor as pointer */
 .restricted {
     cursor: no-drop;
+    color: #bcbcbc !important;
 }
 
 .resume-content {
     padding: 40px 15%;
+    min-height: 100%;
     background-color: #ffffff;
 }
 
@@ -120,6 +124,13 @@ li{
 }
 
 .date {
+    font-size: 16px;
+    font-style: italic;
+    color: #3c3c3c;
+}
+
+.article-date {
+    text-align: right;
     font-size: 16px;
     font-style: italic;
     color: #3c3c3c;
@@ -189,6 +200,56 @@ li{
 .collapsible-container .date,
 .collapsible-container ul {
     display: block;
+}
+
+.tab-container {
+    border: 1px solid #ccc;
+    background-color: #f0f0f0; /* Light grey background */
+  }
+  
+  .tabs button {
+    background-color: #ccc;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 4px 16px;
+    transition: 0.3s;
+  }
+  
+  .tabs button.active {
+    background-color: #b0b0b0;  /* Darker grey background */
+  }
+
+  .tabs button:hover {
+    background-color: #ddd;
+  }
+  
+  .tab-content {
+    clear: both;
+    border-top: none;
+  }
+  
+.center-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.article-table{
+    width: 100%;
+}
+
+.article-image {
+    width: 50%;
+    border-collapse: collapse; /* Ensures borders don't double up */
+}
+
+.article-table td {
+    margin: 0;         /* Removes any margin */
+    padding: 0;       /* Removes any padding */
+    line-height: 0;   /* Adjusts the height of the text line */
+    border: 0px;
 }
 
 /* Media query for aspect ratio */
