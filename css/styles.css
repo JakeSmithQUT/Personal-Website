@@ -254,6 +254,20 @@ li{
 
 /* Media query for aspect ratio */
 @media (max-aspect-ratio: 4/3) {
+
+    .date {
+        font-size: 21px;
+        font-style: italic;
+        color: #3c3c3c;
+    }
+    
+    .article-date {
+        text-align: right;
+        font-size: 21px;
+        font-style: italic;
+        color: #3c3c3c;
+    }
+
     .resume-content {
         padding: 40px 5%;  /* Adjusted horizontal padding */
     }
