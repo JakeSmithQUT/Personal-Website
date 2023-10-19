@@ -87,6 +87,7 @@ li{
 /* Add a style to make the header look clickable, e.g., cursor as pointer */
 .restricted {
     cursor: no-drop;
+    color: #bcbcbc !important;
 }
 
 .resume-content {
