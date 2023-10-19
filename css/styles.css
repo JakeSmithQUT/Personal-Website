@@ -201,6 +201,56 @@ li{
     display: block;
 }
 
+.tab-container {
+    border: 1px solid #ccc;
+    background-color: #f0f0f0; /* Light grey background */
+  }
+  
+  .tabs button {
+    background-color: #ccc;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 4px 16px;
+    transition: 0.3s;
+  }
+  
+  .tabs button.active {
+    background-color: #b0b0b0;  /* Darker grey background */
+  }
+
+  .tabs button:hover {
+    background-color: #ddd;
+  }
+  
+  .tab-content {
+    clear: both;
+    border-top: none;
+  }
+  
+.center-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.article-table{
+    width: 100%;
+}
+
+.article-image {
+    width: 50%;
+    border-collapse: collapse; /* Ensures borders don't double up */
+}
+
+.article-table td {
+    margin: 0;         /* Removes any margin */
+    padding: 0;       /* Removes any padding */
+    line-height: 0;   /* Adjusts the height of the text line */
+    border: 0px;
+}
+
 /* Media query for aspect ratio */
 @media (max-aspect-ratio: 4/3) {
     .resume-content {
