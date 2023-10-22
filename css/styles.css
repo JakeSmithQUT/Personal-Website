@@ -286,7 +286,29 @@ li{
     
     .navbar-wrapper {
         background-color: #ffffff;
-        padding: 10px 5%; /* Adjust the horizontal padding to match other sections */
-}
+        padding: 10px 0%; /* Adjust the horizontal padding to match other sections */
+    }
+
+    /* Existing navbar link styles */
+    .navbar a {
+        padding: 10px 20px;
+        display: block;
+        color: #000000;
+        text-align: center;
+        text-decoration: none;
+        min-width: 15%;
+        font-size: larger;
+    }
+
+    .navbar a:hover {
+        color: #333;
+        background-color: #e7e7e7;
+    }
+
+    /* New styles for the active link */
+    .navbar a.active {
+        color: #000000;;  /* You can adjust this color as needed */
+        background-color: #b0b0b0;  /* You can adjust this background color as needed */
+    }
 
 }
