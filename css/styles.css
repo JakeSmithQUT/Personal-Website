@@ -286,6 +286,7 @@ li{
     
     .navbar-wrapper {
         background-color: #ffffff;
+<<<<<<< HEAD
         padding: 10px 0%; /* Adjust the horizontal padding to match other sections */
     }
 
@@ -309,5 +310,9 @@ li{
         color: #000000;;  /* You can adjust this color as needed */
         background-color: #b0b0b0;  /* You can adjust this background color as needed */
     }
+=======
+        padding: 10px 5%; /* Adjust the horizontal padding to match other sections */
+}
+>>>>>>> main
 
 }
