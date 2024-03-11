@@ -44,26 +44,15 @@
                     <table class="article-table" >
                         <tr>
                             <td><p class="date">Read time: 7 minutes</p></td>
-<<<<<<< HEAD
                             <td><p class="article-date">Updated: 1 November 2023</p></td>
-=======
-                            <td><p class="article-date">19 October 2023</p></td>
->>>>>>> main
                         </tr>
                     </table>
                     
                     <p>
-<<<<<<< HEAD
                         I spent the first two years of my career post-university working as the site Process Control Systems (PCS) engineer at two coal mines, both located in central Queensland, Australia. After an extensive two-week handover with a couple of senior engineer colleagues, I was on my own (with remote over the phone support from my fantastic colleagues in critical situations), responsible for managing the entire mine’s control system infrastructure. As stressful as it was, this sink or swim experience accelerated my grasp not just of industrial control systems but also of the entire OT stack in a production environment. Many lessons were learned the hard way, from discovering why running an Nmap scan on an ICS environment is a bad idea, to understanding that "index out of range" errors are seen as major faults on Allen-Bradley PLCs. Yet, the number one discovery I made was about the priorities people set in environments demanding high availability from their industrial control systems.
                     </p>
                     <p>
                         In production based environments, maintaining uptime often comes at the cost of other considerations (with safety as the exception). My main concern here is proper cyber security practices. The number of times I've seen cyber security measures abandoned for the sake of convenience—whether to address a breakdown, commission new equipment, or easily access a PLC or server—is staggering. It's not uncommon to find Excel files containing plaintext usernames and passwords for routers, SCADA primary and secondary servers, radios, Windows accounts, and many more, often stored on network-shared locations with minimal access control. It's also very common for passwords to be as simple as "Sitename123", as we will see in an example later.
-=======
-                        I spent the first two years of my career post-university working as the site Process Control Systems (PCS) engineer at two underground coal mines, both located in central QLD, Australia. After an extensive two-week handover with a couple of senior engineer colleagues, I was on my own, responsible for managing the entire mine’s control system infrastructure. As stressful as it was, this sink or swim experience accelerated my grasp not just of industrial control systems but also of the entire OT stack in a production environment. Many lessons were learned the hard way, from discovering why running an Nmap scan on an ICS environment is a bad idea, to understanding that "index out of range" errors are seen as major faults on Allen-Bradley PLCs. Yet, the number one discovery I made was about the priorities people set in environments demanding high availability from their industrial control systems.
-                    </p>
-                    <p>
-                        In such environments, maintaining uptime often comes at the cost of other considerations (with safety as the exception). My main concern here is proper cyber security practices. The number of times I've seen cyber security measures abandoned for the sake of convenience—whether to address a breakdown, commission new equipment, or easily access a PLC or server—is staggering. It's not uncommon to find Excel files containing plaintext usernames and passwords for routers, SCADA primary and secondary servers, radios, Windows accounts, and many more, often stored on network-shared locations with minimal access control. It's also very common for passwords to be as simple as "Sitename123", as we will see in an example later.
->>>>>>> main
                     </p>
                     <h3>Aveva's Citect SCADA Vulnerabilities</h3>
                     <p>
@@ -73,11 +62,7 @@
                         Like many advanced SCADA systems, Citect offers the flexibility of customising user accounts with distinct access levels. Aveva, the company who actively develop Citect, stores these credentials in a users.dbf file, using the SHA-1 hashing technique for password security. The purpose of these accounts is to ensure that only authorised personnel can access and manipulate certain control systems. To illustrate, this could prevent an operator from arbitrarily adjusting a methane gas setpoint in response to frequent equipment trips due to excessive methane levels. Instead, a gas monitoring engineer's account would have the privilege level required to make the change.
                     </p>
                     <p>
-<<<<<<< HEAD
                         Citect SCADA has its own scripting language called Cicode, it is used exclusively with the Citect suite and clearly has had heavy influence from other scripting languages like Visual Basic. A particular function within Cicode that I want to bring attention to is the <u><a href="https://johnwiltshire.com/citect-help/Subsystems/CicodeReferenceCitectHTML/Content/Login.html" target="_blank">Login</a></u> function. Designed to log in a user account on a Citect terminal, it’s frequently used to automate user login upon system startup. This is advantageous in industrial operations where power outages, resulting from safety trips or scheduled maintenance, are common. With this function, the Citect terminal can auto-reboot, initiate Citect, and log into the necessary account, ensuring swift control system restoration.
-=======
-                        Citect SCADA has its own scripting language called Cicode, it is used exclusively with the Citect suite and clearly has had heavy influence from other scripting languages like Visual Basic. A particular function within Cicode that I want to bring attention to is the <u><a href="https://johnwiltshire.com/citect-help/Subsystems/CicodeReferenceCitectHTML/Content/Login.html" target="_blank">Login</a></u> function. Designed to log in a user account on a Citect terminal, it’s frequently used to automate user login upon system startup. This is advantageous in places like underground mines where power outages, resulting from safety trips or scheduled maintenance, are common. With this function, the underground Citect terminal can auto-reboot, initiate Citect, and log into the necessary account, ensuring swift control system restoration.
->>>>>>> main
                     </p>
                     <p>
                         However, the major flaw of this function is not just that in order to use it, the username and password for that Citect terminal are hardcoded in plaintext in a Cicode file (.ci) but that ALL usernames and passwords are hardcoded in Cicode for all terminals that have the auto-login functionality implemented. This function only takes the credentials as a plaintext input, thwarting the password hashing done in the users.dbf file and could allow an attacker to log in as any user that utilizes this login Cicode function, potentially enabling them to control equipment from any terminal on site running Citect.
